@@ -19,7 +19,7 @@ const IngredientList = () => {
 
     useEffect(() => {
         dispatch(fetchIngredients());
-    }, []);
+    }, [dispatch]);
 
 
     if (loading) {

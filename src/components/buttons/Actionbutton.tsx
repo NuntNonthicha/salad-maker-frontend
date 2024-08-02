@@ -92,3 +92,5 @@ const ActionButton = React.forwardRef<HTMLButtonElement, ActionButtonProps>(
 );
 
 export default ActionButton;
+
+ActionButton.displayName = 'ActionButton';

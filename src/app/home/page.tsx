@@ -28,11 +28,10 @@ export default function HomePage() {
 
     return (
         <div className='w-full'>
-
             <div className='px-4 md:px-6'>
                 <HomeSectionLayout>
                     <div className='flex flex-wrap gap-4 py-4 md:justify-between items-center'>
-                        <h1 className='font-bold text-[36px]'>Let's Create...your own salad!!!</h1>
+                        <h1 className='font-bold text-[36px]'>Let&apos;s Create...your own salad!!!</h1>
                         <SearchBar
                             keyword={searchTerm}
                             setKeyword={handleSearchChange}

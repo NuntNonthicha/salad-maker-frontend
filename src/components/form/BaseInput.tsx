@@ -19,3 +19,4 @@ export const BaseInput = React.forwardRef<HTMLInputElement, InputProps>(
     }
 )
 
+BaseInput.displayName = 'BaseInput';
