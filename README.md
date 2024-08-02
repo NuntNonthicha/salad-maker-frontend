@@ -37,4 +37,4 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Deploy on Vercel
 
-'*' Link : https://salad-maker-frontend.vercel.app/
+* Link : https://salad-maker-frontend.vercel.app/
