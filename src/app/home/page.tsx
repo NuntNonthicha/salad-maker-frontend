@@ -9,12 +9,14 @@ import { fetchIngredients, selectIngredients, setSearchTerm } from '@/redux/slic
 import SearchBar from '@/components/common/search-bar';
 import IngredientList from './components/ingredients/IngredientList';
 import HeroSection from './components/hero/HeroSection';
+import { totalCartItemsSelector } from '@/redux/slices/cartSlice';
 
 export default function HomePage() {
 
     const dispatch: AppDispatch = useDispatch();
 
-    const { ingredients, searchTerm } = useSelector(selectIngredients);
+    const { searchTerm } = useSelector(selectIngredients);
+    const totalCartItems = useSelector(totalCartItemsSelector);
 
     useEffect(() => {
         dispatch(fetchIngredients());
@@ -41,7 +43,7 @@ export default function HomePage() {
                 </HomeSectionLayout>
             </div>
 
-            <FooterCart />
+            {totalCartItems > 0 && <FooterCart />}
         </div>
     )
 }

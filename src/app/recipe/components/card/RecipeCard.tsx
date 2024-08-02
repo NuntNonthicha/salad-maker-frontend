@@ -36,7 +36,7 @@ export default function RecipeCard({ id, name, totalCalories }: IAllRecipe) {
                 <IconButton
                     icon={BiEdit}
                     variant="black"
-                    className="w-full md:h-[50px] bg-white font-medium text-lg"
+                    className="w-full md:h-[45px] bg-white font-medium text-lg"
                     onClick={() => router.push(`/recipe/edit/${id}`)}>
                     Edit
                 </IconButton>

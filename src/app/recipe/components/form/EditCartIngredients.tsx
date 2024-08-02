@@ -104,7 +104,7 @@ const EditRecipePage = ({ id }: { id: string }) => {
                 <ActionButton
                     type="submit"
                     variant='yellow'
-                    className='w-full text-white text-lg font-bold'
+                    className='w-full text-white text-lg font-bold rounded'
                     onClick={() => updateRecipe}
                 >
                     Update Recipe

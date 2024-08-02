@@ -11,7 +11,7 @@ const IngredientCard = (props: Props) => {
     return (
         <div className="flex flex-col p-4 gap-1 bg-white rounded hover:drop-shadow-md w-full md:max-w-[350px]">
             <div className='flex md:flex-col justify-center items-center gap-2'>
-                <DisplayImage pathName={props.product.image} className="w-full max-h-[200px] xl:min-w-[300px]" />
+                <DisplayImage pathName={props.product.image} className="w-full max-h-[200px] xl:min-w-[300px] px-2 md:px-4" />
 
                 <div className="flex flex-col w-full">
                     <p className='text-lg capitalize text-wrap '>{props.product.ingredient}</p>

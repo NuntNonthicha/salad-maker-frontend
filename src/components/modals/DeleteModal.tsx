@@ -33,7 +33,7 @@ const DeleteModal = ({ loadData, api }: DeleteBtnProps) => {
             <IconButton
                 icon={GoTrash}
                 variant="red"
-                className="w-full md:h-[50px] bg-white font-medium text-lg"
+                className="w-full md:h-[45px] bg-white font-medium text-lg"
                 onClick={openModal}>
                 Delete
             </IconButton>

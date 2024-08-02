@@ -4,7 +4,6 @@ import { API_PATH } from "@/config/api";
 import { IRecipe } from "@/types/ingredient";
 import { RootState } from "../store";
 
-// Define the state interface
 interface RecipeState {
   recipes: IRecipe[];
   loading: boolean;
@@ -12,15 +11,12 @@ interface RecipeState {
   error: string | null;
 }
 
-// Initial state
 const initialState: RecipeState = {
   recipes: [],
   loading: false,
   status: "idle",
   error: null,
 };
-
-// Thunks for CRUD operations
 
 // Fetch recipes
 export const fetchRecipes = createAsyncThunk(
@@ -83,7 +79,6 @@ export const updateRecipe = createAsyncThunk(
   }
 );
 
-// Create the slice
 const recipeSlice = createSlice({
   name: "recipes",
   initialState,
@@ -174,7 +169,6 @@ const recipeSlice = createSlice({
           state.recipes.push(recipe);
         }
       })
-
       .addCase(fetchRecipeById.rejected, (state, action) => {
         state.error = action.error.message || "Failed to fetch recipes";
         state.loading = false;
