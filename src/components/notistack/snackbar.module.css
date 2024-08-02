@@ -1,0 +1,28 @@
+/**=========== Snackbar  =========== */
+.snackbar {
+  @apply px-4 py-2 rounded text-white flex items-center;
+}
+
+.snackbarDefault {
+  @apply bg-default-gray;
+}
+
+.snackbarSuccess {
+  @apply bg-default-green;
+}
+
+.snackbarError {
+  @apply bg-default-red;
+}
+
+.snackbarWarning {
+  @apply bg-default-yellow;
+}
+
+.snackbarInfo {
+  @apply bg-blue-500;
+}
+
+.icon {
+  @apply w-6 h-6 mr-2;
+}

@@ -1,17 +1,20 @@
-export const indicatorCount = 4;
+import { Metadata } from 'next';
+import Image from 'next/image';
+import * as React from 'react';
 
-export default function LoadingIndicator() {
+export const metadata: Metadata = {
+    title: 'Loading',
+};
+
+export default function Loading() {
     return (
-        <div id="loading-indicator" className="flex h-full !w-fit gap-1">
-            {Array.from({ length: indicatorCount }).map((_, i) => (
-                <span
-                    key={i}
-                    className={`animate-float block aspect-square min-h-full w-auto rounded-full bg-current transition-colors`}
-                    style={{
-                        animationDelay: `${i * 200}ms`,
-                    }}
-                />
-            ))}
-        </div>
+        <section className='bg-transparent'>
+            <div className='layout flex min-h-screen flex-col items-center justify-center text-center'>
+                <div className='text-default-yellow repeat-infinite animate-text text-default-blue animate-pulse py-2 text-center text-3xl font-semibold tracking-wide'>
+                    Loading ...
+                </div>
+            </div>
+        </section>
     );
 }
+

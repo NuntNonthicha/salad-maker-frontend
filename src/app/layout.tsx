@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Poppins } from 'next/font/google';
 import "./globals.css";
-import SideNav from "@/components/layout/navbar/side-nav";
-import MarginWidthWrapper from "@/components/layout/navbar/margin-wrapper";
-import HeaderNav from "@/components/layout/navbar/header-nav";
-import PageWrapper from "@/components/layout/navbar/page-wrapper";
-import HeaderMobile from "@/components/layout/navbar/header-mobile";
+import SideNav from "@/components/navbar/SideNav";
+import MarginWidthWrapper from "@/components/navbar/MarginWidthWrapper";
+import HeaderMobile from "@/components/navbar/HeaderMobile";
+import ReduxProvider from "@/redux/Provider";
+import SnackbarProvider from "@/components/notistack/SnackbarProvider";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -30,14 +30,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`bg-white ${poppins.className}`}>
+      <body className={`bg-[#f5f5f5] ${poppins.className}`}>
         <div className="flex">
           <SideNav />
           <main className="flex-1">
             <MarginWidthWrapper>
-              <HeaderNav />
               <HeaderMobile />
-              <PageWrapper>{children}</PageWrapper>
+              <ReduxProvider>
+                <SnackbarProvider>
+                  {children}
+                </SnackbarProvider>
+              </ReduxProvider>
             </MarginWidthWrapper>
           </main>
         </div>

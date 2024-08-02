@@ -84,10 +84,7 @@ const MenuItem = ({ item }: { item: SideNavItem }) => {
                         }`}
                 >
                     {item.icon}
-                    {/* Show only icon when sidebar is collapsed */}
-                    <span className={`${!open ? 'hidden' : 'flex'} text-xl font-medium`}>
-                        {item.title}
-                    </span>
+                    <span className="font-medium text-xl flex">{item.title}</span>
                 </Link>
             )}
         </div>

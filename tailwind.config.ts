@@ -28,6 +28,11 @@ const config: Config = {
       borderRadius: {
         DEFAULT: "16px",
       },
+      boxShadow: {
+        "default-shadow": "0px 4px 8px rgba(55, 62, 68, 0.15)",
+        "dark-shadow": "0px 1px 10px rgba(0, 0, 0, 0.15)",
+        "footer-shadow": "11px -14px 16px rgba(0, 0, 0, 0.1)",
+      },
     },
   },
   plugins: [],
