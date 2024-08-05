@@ -38,7 +38,7 @@ export default function CartIngredientsItem({
                             >
                                 -
                             </IconButton>
-                            <p className='text-sm text-gray-1'>x{amount}</p>
+                            <p className='text-sm'>x{amount}</p>
                             <IconButton
                                 variant="gray"
                                 className="text-black"

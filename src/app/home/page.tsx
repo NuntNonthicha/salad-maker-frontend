@@ -6,7 +6,7 @@ import HomeSectionLayout from './layout';
 import { AppDispatch } from '@/redux/store';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchIngredients, selectIngredients, setSearchTerm } from '@/redux/slices/ingredientSlice';
-import SearchBar from '@/components/common/search-bar';
+import SearchBar from '@/components/common/SearchBar';
 import IngredientList from './components/ingredients/IngredientList';
 import HeroSection from './components/hero/HeroSection';
 import { totalCartItemsSelector } from '@/redux/slices/cartSlice';
