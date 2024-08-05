@@ -18,9 +18,11 @@ import { BaseInput } from '@/components/form/BaseInput';
 interface CreateRecipeModalProps {
     onCreate: (data: IRecipe) => void;
     isLoading?: boolean;
+    open: boolean;
+    onOpenChange: (open: boolean) => void;
 }
 
-const CreateRecipeModal = ({ onCreate, isLoading }: CreateRecipeModalProps) => {
+const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRecipeModalProps) => {
     const { Modal, openModal, closeModal } = useModal();
     const cartItems = useAppSelector((state) => state.cart.cartItems);
     const totalCalories = useAppSelector(totalCaloriesSelector);

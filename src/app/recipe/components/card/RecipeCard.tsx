@@ -26,7 +26,6 @@ export default function RecipeCard({ id, name, totalCalories }: IAllRecipe) {
             <div className='flex flex-col w-full h-fit rounded bg-white p-4'>
                 <p>{name}</p>
                 <h1 className='font-bold gap-2'>{totalCalories} <span className='text-default-yellow'>Cal</span></h1>
-
             </div>
 
             <div className="flex w-full justify-between gap-2">
