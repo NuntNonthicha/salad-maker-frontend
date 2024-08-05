@@ -27,9 +27,9 @@ const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRe
     const cartItems = useAppSelector((state) => state.cart.cartItems);
     const totalCalories = useAppSelector(totalCaloriesSelector);
     const totalAmount = useAppSelector(totalCartItemsSelector);
-    console.log("Cart Items:", cartItems);
-    console.log("Total Calories from Selector:", totalCalories);
-    console.log("Total Amount from Selector:", totalAmount);
+    // console.log("Cart Items:", cartItems);
+    // console.log("Total Calories from Selector:", totalCalories);
+    // console.log("Total Amount from Selector:", totalAmount);
 
     const form = useForm<z.infer<typeof createRecipeSchema>>({
         resolver: zodResolver(createRecipeSchema),
@@ -45,7 +45,7 @@ const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRe
 
     useEffect(() => {
         form.reset({
-            name: form.getValues('name'), // Retain the current name
+            name: form.getValues('name'),
             detail: cartItems.map((item) => ({
                 ingredient: item.product.ingredient || '',
                 category: item.product.category || '',
@@ -58,10 +58,10 @@ const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRe
         });
     }, [cartItems, totalAmount, totalCalories, form]);
 
-    console.log("Watched Name:", watch("name"));
-    console.log("Watched Total Amount:", watch("totalAmount"));
-    console.log("Watched Detail:", watch("detail"));
-    console.log("Watched Total Calories:", watch("totalCalories"));
+    // console.log("Watched Name:", watch("name"));
+    // console.log("Watched Total Amount:", watch("totalAmount"));
+    // console.log("Watched Detail:", watch("detail"));
+    // console.log("Watched Total Calories:", watch("totalCalories"));
 
     const { fields, append, remove } = useFieldArray({
         control,
@@ -69,7 +69,7 @@ const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRe
     });
 
     const handleConfirm = (data: z.infer<typeof createRecipeSchema>) => {
-        console.log("Form Data:", data);
+        //console.log("Form Data:", data);
 
         onCreate(data as unknown as IRecipe);
         closeModal();

@@ -10,5 +10,4 @@ export const API_PATH = {
   GET_RECIPES_BY_ID: (id: string) => `/api/recipe/${id}`,
   PATCH_RECIPE: (id: string) => `/api/edit-recipe/${id}`,
   DELETE_RECIPE: (id: string) => `/api/recipe/${id}`,
-
 };

@@ -53,8 +53,7 @@ const EditRecipePage = ({ id }: { id: string }) => {
             setIsUpdating(true);
             try {
                 await dispatch(updateRecipe({ id, recipeData: { ...recipe, ...formData } }));
-                // Handle success (e.g., show a success message)
-                console.log('Recipe updated successfully');
+                //console.log('Recipe updated successfully');
                 enqueueSnackbar('Update Recipe Success', { variant: 'success' });
 
             } catch (error: any) {
