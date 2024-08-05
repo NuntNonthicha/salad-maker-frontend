@@ -7,7 +7,6 @@ import { AppDispatch } from "@/redux/store";
 import { fetchIngredients, selectIngredients } from "@/redux/slices/ingredientSlice";
 import SelectCategories from "@/app/home/components/ingredients/SelectCategory";
 import IngredientCard from "@/app/home/components/ingredients/IngredientCard";
-import SearchBar from "@/components/common/SearchBar";
 
 const IngredientList = () => {
 
