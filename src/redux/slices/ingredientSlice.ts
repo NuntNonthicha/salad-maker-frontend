@@ -72,7 +72,7 @@ const ingredientSlice = createSlice({
         state.loading = false;
         state.status = "succeeded";
         state.ingredients = action.payload || [];
-        state.filteredIngredients = action.payload || []; // Ensure this is set
+        state.filteredIngredients = action.payload || [];
       })
       .addCase(fetchIngredients.rejected, (state, action) => {
         state.loading = false;

@@ -5,6 +5,7 @@ import { RootState } from "../store";
 export interface CartState {
   cartItems: CartItem[];
 }
+
 const initialState: CartState = {
   cartItems: [],
 };
@@ -53,6 +54,7 @@ export const productAmountInCartSelector = createSelector(
 export const totalCartItemsSelector = createSelector([cartItems], (cartItems) =>
   cartItems.reduce((total: number, curr: CartItem) => (total += curr.amount), 0)
 );
+
 export const totalCaloriesSelector = createSelector([cartItems], (cartItems) =>
   cartItems.reduce(
     (total: number, curr: CartItem) =>

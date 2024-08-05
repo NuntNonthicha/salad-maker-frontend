@@ -1,4 +1,3 @@
-// hooks/useIngredients.ts
 import { useState, useCallback } from 'react';
 import { useAppDispatch, useAppSelector } from '@/redux/store';
 import { fetchIngredients } from '@/redux/slices/ingredientSlice';

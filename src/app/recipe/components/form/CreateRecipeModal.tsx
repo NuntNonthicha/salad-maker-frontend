@@ -70,7 +70,6 @@ const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRe
 
     const handleConfirm = (data: z.infer<typeof createRecipeSchema>) => {
         //console.log("Form Data:", data);
-
         onCreate(data as unknown as IRecipe);
         closeModal();
     };

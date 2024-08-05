@@ -1,4 +1,3 @@
-//Icon Graph Type Health Button : show category/type (bmi/pressure/,,)
 import { cn } from '@/utils/className';
 import React from 'react';
 import { IconType } from 'react-icons';

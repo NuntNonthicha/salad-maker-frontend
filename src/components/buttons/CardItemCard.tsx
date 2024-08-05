@@ -1,13 +1,10 @@
 import { useAppDispatch } from "@/redux/store";
 import { CartItem } from "@/types/ingredient";
-import AmountBtn from "./AmountBtn";
 import { decrement, increment } from "@/redux/slices/cartSlice";
-import Image from "next/image";
 import DisplayImage from "../common/DisplayImage";
 import { cn } from "@/utils/className";
-import ActionButton from "./Actionbutton";
 import IconButton from "./IconButton";
-import { AiFillBell } from "react-icons/ai";
+
 //แสดงรายการที่กดว่ามีอะไรบ้าง หน้า edit recipe
 interface CartItemProps {
     cartItem: CartItem;

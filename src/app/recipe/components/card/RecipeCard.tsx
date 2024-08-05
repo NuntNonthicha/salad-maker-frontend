@@ -28,6 +28,7 @@ export default function RecipeCard({ id, name, totalCalories }: IAllRecipe) {
                 <h1 className='font-bold gap-2'>{totalCalories} <span className='text-default-yellow'>Cal</span></h1>
 
             </div>
+
             <div className="flex w-full justify-between gap-2">
                 <DeleteModal
                     loadData={loadRecipes}
@@ -40,9 +41,7 @@ export default function RecipeCard({ id, name, totalCalories }: IAllRecipe) {
                     onClick={() => router.push(`/recipe/edit/${id}`)}>
                     Edit
                 </IconButton>
-
             </div>
-
         </div>
 
     )
