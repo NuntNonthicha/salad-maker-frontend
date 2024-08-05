@@ -83,7 +83,6 @@ const EditRecipePage = ({ id }: { id: string }) => {
                             onDelete={() => handleDeleteIngredient(item._id)}
                             onIncrese={() => handleIncreaseIngredient(item._id)}
                             onDecrease={() => handleDecreaseIngredient(item._id)}
-
                         />
                     ))}
                 </div>
