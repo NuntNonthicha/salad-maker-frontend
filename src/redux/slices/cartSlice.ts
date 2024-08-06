@@ -40,6 +40,10 @@ export const cartSlice = createSlice({
         }
       }
     },
+
+    clearCart: (state) => {
+      state.cartItems = [];
+    },
   },
 });
 
@@ -63,6 +67,6 @@ export const totalCaloriesSelector = createSelector([cartItems], (cartItems) =>
   )
 );
 
-export const { increment, decrement } = cartSlice.actions;
+export const { increment, decrement, clearCart } = cartSlice.actions;
 
 export default cartSlice.reducer;

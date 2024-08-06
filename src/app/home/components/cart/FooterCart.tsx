@@ -11,7 +11,6 @@ import CreateRecipeModal from "@/app/recipe/components/form/CreateRecipeModal";
 
 const FooterCart = () => {
 
-    const [isOpen, setIsOpen] = useState(false);
     const dispatch = useAppDispatch();
     const { enqueueSnackbar } = useSnackbar();
 
@@ -31,8 +30,6 @@ const FooterCart = () => {
             <BottomCartAmount />
             <CreateRecipeModal
                 onCreate={handleCreateRecipe}
-                open={isOpen}
-                onOpenChange={setIsOpen}
             />
         </footer>
     );

@@ -5,8 +5,8 @@ import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import useModal from '@/hooks/useModal';
 
-import { useAppSelector } from '@/redux/store';
-import { totalCaloriesSelector, totalCartItemsSelector } from '@/redux/slices/cartSlice';
+import { useAppDispatch, useAppSelector } from '@/redux/store';
+import { clearCart, totalCaloriesSelector, totalCartItemsSelector } from '@/redux/slices/cartSlice';
 import { IRecipe } from '@/types/ingredient';
 import { useEffect } from 'react';
 import { createRecipeSchema } from '@/components/form/validation/FormValidator';
@@ -18,15 +18,14 @@ import { BaseInput } from '@/components/form/BaseInput';
 interface CreateRecipeModalProps {
     onCreate: (data: IRecipe) => void;
     isLoading?: boolean;
-    open: boolean;
-    onOpenChange: (open: boolean) => void;
 }
 
-const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRecipeModalProps) => {
+const CreateRecipeModal = ({ onCreate, isLoading }: CreateRecipeModalProps) => {
     const { Modal, openModal, closeModal } = useModal();
     const cartItems = useAppSelector((state) => state.cart.cartItems);
     const totalCalories = useAppSelector(totalCaloriesSelector);
     const totalAmount = useAppSelector(totalCartItemsSelector);
+    const dispatch = useAppDispatch();
     // console.log("Cart Items:", cartItems);
     // console.log("Total Calories from Selector:", totalCalories);
     // console.log("Total Amount from Selector:", totalAmount);
@@ -41,7 +40,7 @@ const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRe
         },
     });
 
-    const { control, handleSubmit, setError, formState: { errors }, watch } = form;
+    const { control, handleSubmit, setError, formState: { errors }, reset, watch } = form;
 
     useEffect(() => {
         form.reset({
@@ -72,6 +71,8 @@ const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRe
         //console.log("Form Data:", data);
         onCreate(data as unknown as IRecipe);
         closeModal();
+        reset()
+        dispatch(clearCart());
     };
 
     return (
@@ -85,7 +86,7 @@ const CreateRecipeModal = ({ onCreate, isLoading, open, onOpenChange }: CreateRe
             </ActionButton>
 
             <Modal>
-                <form onSubmit={form.handleSubmit(handleConfirm)}>
+                <form onSubmit={handleSubmit(handleConfirm)}>
                     <div className='flex flex-col items-center px-10 py-6 gap-4'>
                         <LocationIcon className='text-default-yellow w-[72px] h-[72px]' />
                         <h1 className='text-xl font-bold'>Recipe Name</h1>
